@@ -4,8 +4,6 @@ const dataPromise = d3.json(url);
 console.log("Data Promise: ", dataPromise);
 
 d3.json(url).then(function(data) {
-    console.log(data);
-    
     // Set up variables to access data.
     let names = data.names;
     let metadata = data.metadata;
@@ -16,7 +14,6 @@ d3.json(url).then(function(data) {
        
     // Created function to plot data of first id, so page loads with some data initially.
     function init() {
-        
         // Set up variables to contain data used in plots.
         subject_id = sorted_samples[0]['id'];
         otu_ids = sorted_samples[0]['otu_ids'];
@@ -61,7 +58,7 @@ d3.json(url).then(function(data) {
 
     };
     
-    // Looped through names and add them to dropdown.
+    // Looped through names and added them to the dropdown.
     for (let i = 0; i < names.length; i++) {
         d3.select("select").append("option").text(names[i]);
     };
